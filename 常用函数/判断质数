@@ -1,0 +1,16 @@
+def isPrime(x):
+    if x<2:
+        return False
+    if x == 2:
+        return True
+    elif x % 2 == 0:
+        return False
+
+    # 奇数的因子不能是偶数，因此从3开始，以2为step
+    for i in range(3, int(x ** 0.5) + 1, 2):
+        if x % i == 0:
+            return False
+    return True
+
+print(isPrime(19))
+print(isPrime(31))
